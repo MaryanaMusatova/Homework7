@@ -5,11 +5,12 @@ public class Main {
         int desireSum = 2459000;
         int sum = 0;
         int amount = 15000;
-        double percent = 0.01;
+        double yearPercent=0.12;
+        double percent = yearPercent/12;
+        double deltaSum=percent*amount;
         int month = 0;
-        while (sum < desireSum) {
-            sum += amount;
-            sum = (int) (sum * (1 + percent));
+        while (sum <= desireSum) {
+            sum = (int)(sum+amount+deltaSum);
             month++;
             System.out.println("Месяц " + month + " Сумма накоплений равна " + sum + " рублей");
         }
